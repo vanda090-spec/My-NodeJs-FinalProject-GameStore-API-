@@ -1,8 +1,18 @@
 import jwt from "jsonwebtoken";
 import {jwtSecret} from "../config/index.js";
 
-const payload={role:'user'};
-const secret='blala';
+export const createToken=(payload,options)=>{
+    try {
+        return jwt.sign(payload,jwtSecret,options)
+    }catch(err){
+       throw err
+    }
+};
 
-const token=jwt.sign(payload,secret,{expiresIn:'180'});
-
+export const verifyToken =(token)=>{
+    try{
+        return jwt.verify(token,jwtSecret)
+    }catch(err){
+        throw err 
+    }
+};
