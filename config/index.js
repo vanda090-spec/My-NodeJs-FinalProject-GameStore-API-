@@ -1,7 +1,11 @@
-import "dotenv/config.js"; 
+import "dotenv/config";
 
-
-export const PORT=process.env.PORT || 3001;
-export const JWT_Secret=process.env.JWT_Secret
-
-export default PORT;
+export const port=process.env.PORT;
+export const jwtSecret=process.env.JWT_SECRET;
+export const sql={
+    dbName:process.env.SQL_DB_NAME,
+    user:process.env.SQL_USER,
+    password:process.env.SQL_PASS,
+    host:process.env.SQL_HOST
+};
+export default {port,jwtSecret,sql};
