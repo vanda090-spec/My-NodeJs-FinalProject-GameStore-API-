@@ -40,7 +40,7 @@ export const registerUserService = async (userData) => {
 
     const { password, ...cleanUser } = user
 
-    return { status: 200, message: "User has been registered successfully", user: cleanUser };
+    return { status: 201, message: "User has been registered successfully", user: cleanUser };
 };
 
 export const updateUserService = async (userID, updatedPassword) => {
@@ -70,7 +70,7 @@ export const userResetService = async (userID, newPassword) => {
     if(!user){
         throw {status:400,message:"User not found"};
     }
-    
+
     const {password,...cleanUser}=user;
     return {status:200,message:"Password has been reset successfuly",user:cleanUser}
 };

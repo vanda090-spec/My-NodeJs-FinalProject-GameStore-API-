@@ -5,7 +5,7 @@ router.get('/', getAllworkers);
 router.get('/:workerID', getWorkerByID);
 
 router.post('/', postNewWorker);
-router.put('/:workerID', updateWorkerByID);
+router.put('/:workerID', updateWorker);
 router.delete('/:workerID',deleteWorkerByID);
 
 
