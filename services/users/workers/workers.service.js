@@ -1,0 +1,1 @@
+getAllworkers,getWorkerByID,postNewWorker,updateWorkerByID,deleteWorkerByID
