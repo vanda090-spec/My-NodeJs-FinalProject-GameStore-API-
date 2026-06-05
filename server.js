@@ -1,6 +1,6 @@
 import {myApp} from "./myApp.js";
 import {port} from "./config/index.js"
-import { checkConnection } from "./services/database/checkConnection.js";
+import { checkConnection } from "./dal/database/checkConnection.js";
 
 await checkConnection();
 

@@ -1,4 +1,4 @@
-import { sequelize } from "../../dal/db.js";
+import { sequelize } from "../database/db.js";
 
 export const checkConnection= async ()=>{
 try {
