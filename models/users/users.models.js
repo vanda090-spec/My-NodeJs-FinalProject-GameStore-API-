@@ -1,4 +1,4 @@
-import { sequelize } from "../../dal/db.js";
+import { sequelize } from "../../dal/database/db.js";
 import { DataTypes } from "sequelize";
 
 export const User = sequelize.define('User', {

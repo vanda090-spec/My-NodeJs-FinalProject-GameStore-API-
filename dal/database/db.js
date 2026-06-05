@@ -1,5 +1,5 @@
 import { Sequelize } from "sequelize";
-import { sql } from "../config/index.js";
+import { sql } from "../../config/index.js";
 
 export const sequelize = new Sequelize(
     sql.dbName,
