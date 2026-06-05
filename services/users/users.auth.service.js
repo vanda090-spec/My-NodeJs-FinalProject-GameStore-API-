@@ -1,5 +1,6 @@
 import { hashPassword } from "../../utils/hashPassword.js";
 import { comparePassword } from "../../utils/comparePassword.js";
+import { userDal } from "../../dal/users.dal.js";
 
 export const logUserService = async (userName, password) => {
     const hashedPassword = await hashPassword(password);
