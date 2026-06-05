@@ -3,16 +3,20 @@ import { comparePassword } from "../../utils/comparePassword.js";
 import { userDal } from "../../dal/users.dal.js";
 
 export const logUserService = async (userName, password) => {
-    const hashedPassword = await hashPassword(password);
-    const isValid = await comparePassword(password, hashedPassword);
-     if (!userName || !isValid) {
+    const user= await userDal.getUserByName(userName);
+    if(!user){
+          throw { status: 400, message: "User not found" };
+    }
+    const isValid = await comparePassword(password, user.password);
+     if (!isValid) {
         throw { status: 400, message: "Invalid user or password name" };
     }
      return {status:200, message:"User has been logged successfully"};
 };
 
 export const registerUserService = async (userData) => {
-    if (!userData || Object.keys(userData).length === 0) {
+    const user = await userDal.registerUser(userData);
+    if (!user|| Object.keys(user).length === 0) {
         throw { status: 400, message: "Invalid data" };
     }
      return {status:200, message:"User has been registered successfully"};
