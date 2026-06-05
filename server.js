@@ -1,10 +1,11 @@
 import {myApp} from "./myApp.js";
-import {Port} from "./config/index.js"
+import {port} from "./config/index.js"
+import { checkConnection } from "./services/database/checkConnection.js";
 
+await checkConnection();
 
-
-myApp.listen(PORT,()=>{
-    console.log(`Server is running on http://localhost:${PORT}`);
+myApp.listen(port,()=>{
+    console.log(`Server is running on http://localhost:${port}`);
     
 });
 
