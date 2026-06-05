@@ -28,11 +28,11 @@ export const logUserService = async (userName, password) => {
     return { status: 200, message: "User has been logged successfully", token };
 };
 
-export const registerUserService = async (userData) => {
+export const registerUserService = async (UserData) => {
 
-    userData.password = await hashPassword(userData.password);
+    UserData.password = await hashPassword(UserData.password);
 
-    const user = await userDal.registerUser(userData);
+    const user = await userDal.registerUser(UserData);
 
     if (!user) {
         throw { status: 400, message: "Invalid data" };
@@ -58,14 +58,14 @@ export const updateUserService = async (userID, updatedPassword) => {
     return { status: 200, message: "User/Password has been updated successfully", user: cleanUser };
 };
 
-export const userResetService = async (userID, newPassword) => {
-    if (!userID || !newPassword) {
+export const userResetService = async (UserData, newPassword) => {
+    if (!UserData || !newPassword) {
         throw { status: 400, message: "Invalid user/password" };
     }
 
     const hashedPassword = await hashPassword(newPassword);
 
-    const user= await userDal.updateUser(userID,{password:hashedPassword});
+    const user= await userDal.updateUser(UserData,{password:hashedPassword});
 
     if(!user){
         throw {status:400,message:"User not found"};

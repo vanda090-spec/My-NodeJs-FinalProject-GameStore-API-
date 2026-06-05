@@ -1,19 +1,19 @@
 export const workerDal = {
     getAllworkers: () => Worker.findAll(),
 
-     getWorkerByID: (workerID) => Worker.findByPk(workerID),
+     getWorkerByID: (WorkerID) => Worker.findByPk(WorkerID),
 
-   postNewWorker: (workerData) => Worker.create(workerData),
+   postNewWorker: (WorkerData) => Worker.create(WorkerData),
 
-    updateWorker: async (workerID, workerData) => {
-        await Worker.update(workerData, { where: { 
-            WorkerID:workerID } 
+    updateWorker: async (WorkerID, WorkerData) => {
+        await Worker.update(WorkerData, { where: { 
+            WorkerID:WorkerID } 
         });
-        return Worker.findByPk(workerID);
+        return Worker.findByPk(WorkerID);
     },
-    deleteWorkerByID: (workerID) => {
+    deleteWorkerByID: (WorkerID) => {
         return Worker.destroy({where:{
-            WorkerID:workerID
+            WorkerID:WorkerID
         }});
     }
 };

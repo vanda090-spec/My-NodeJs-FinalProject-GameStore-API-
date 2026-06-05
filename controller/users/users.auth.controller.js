@@ -3,7 +3,7 @@ import { logUserService, registerUserService, updateUserService, userResetServic
 export const logUser = async (req, res) => {
     try {
 
-        const { userName, password } = req.body;
+        const { UserName, password } = req.body;
         
         const response = await logUserService(userName, password);
 
@@ -20,9 +20,9 @@ export const logUser = async (req, res) => {
 export const regUser = async (req, res) => {
     try {
 
-        const userData = req.body;
+        const UserData = req.body;
 
-        const response = await registerUserService(userData);
+        const response = await registerUserService(UserData);
 
         const { status, ...data } = response
 
@@ -37,7 +37,7 @@ export const regUser = async (req, res) => {
 export const updatePassword = async (req, res) => {
     try {
 
-        const { userID } = req.params;
+        const { UserID } = req.params;
 
         const { updatedPassword } = req.body;
 
@@ -56,9 +56,9 @@ export const updatePassword = async (req, res) => {
 export const resetPassword = async (req, res) => {
     try {
 
-        const { userID,newPassword } = req.body;
+        const { UserID,newPassword } = req.body;
 
-        const response = await userResetService(userID,newPassword);
+        const response = await userResetService(UserID,newPassword);
 
         const { status, ...data } = response
 

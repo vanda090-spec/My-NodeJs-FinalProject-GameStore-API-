@@ -2,29 +2,29 @@ import { sequelize } from "../../dal/database/db.js";
 import { DataTypes } from "sequelize";
 
 export const User = sequelize.define('User', {
-    id: {
+    UserID: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true
     },
-    name: {
+    UserName: {
         type: DataTypes.STRING,
         allowNull: false,
 
     },
-    password: {
+    UserPassword: {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    email: {
+    UserEmail: {
         type: DataTypes.STRING,
         allowNull: false
     },
-    phone: {
+    UserPhone: {
         type: DataTypes.STRING,
         allowNull: false
     },
-    country: {
+    UserCountry: {
         type: DataTypes.STRING,
         allowNull: false
     }

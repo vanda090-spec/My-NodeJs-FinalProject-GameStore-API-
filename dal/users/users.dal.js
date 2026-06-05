@@ -4,27 +4,27 @@ import { User } from "../../models/users/users.models.js";
 export const userDal = {
     getUsers: () => User.findAll(),
 
-    getUserById: (id) => User.findByPk(id),
+    getUserById: (UserID) => User.findByPk(UserID),
 
-    getUserByEmail: (email) => {
+    getUserByEmail: (Email) => {
         return User.findOne({ where: { email } });
     },
 
-    getUserByName: (name) => {
+    getUserByName: (UserName) => {
         return User.findOne({ where: { name } });
     },
 
-    registerUser: (userData) => User.create(userData),
+    registerUser: (UserData) => User.create(userData),
 
-    updateUser: async (id, userData) => {
-        await User.update(userData, { where: { id } });
+    updateUser: async (UserID, UserData) => {
+        await User.update(UserData, { where: { id } });
         return User.findByPk(id);
     },
 
-    deleteUser: (id) => {
+    deleteUser: (UserID) => {
         return User.destroy({ where: { id } });
     },
-    
+
     usersCount: () => {
         return User.count();
     }
