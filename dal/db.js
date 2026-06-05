@@ -1,13 +1,19 @@
 import { Sequelize } from "sequelize";
-import {sql} from "../config/index.js";
+import { sql } from "../config/index.js";
 
-export const sequelize=new Sequelize(
+export const sequelize = new Sequelize(
     sql.dbName,
-
     sql.user,
-    
-    sql.password,{
-        host:sql.host,
-        dialect:"mssql"
+    sql.password, {
+    dialect: "mssql",
+    host: sql.host,
+
+    dialectOptions: {
+        options: {
+            instanceName: sql.instanceName,
+            trustServerCertificate: true
+        }
     }
+
+}
 );
