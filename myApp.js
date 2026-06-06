@@ -1,7 +1,7 @@
 import express from "express";
 import apiRoutes from "./routes/index.js";
 import cors from "cors";
-import router from "./routes/index.js";
+import { isValid } from "./utils/reqValidation.js";
 
 
 export const myApp=express();
@@ -10,7 +10,7 @@ export const myApp=express();
 myApp.use(cors());
 myApp.use(express.json());
 
-myApp.use("/main",apiRoutes)
+myApp.use("/main",isValid.apiRoutes)
 
 
 export default myApp;

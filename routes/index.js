@@ -6,8 +6,8 @@ import workersRoutes from ".././routes/workers/workers.js"
 export const router=Router();
 
 
-router.use('/info',usersInfoRoutes);
-router.use('/auth',usersAuthRoutes);
+router.use('/usersInfo',usersInfoRoutes);
+router.use('/usersAuth',usersAuthRoutes);
 router.use('/workers',workersRoutes);
 
 
