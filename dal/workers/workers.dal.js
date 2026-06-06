@@ -1,19 +1,27 @@
+import {Worker} from "../../models/workers/workers.model.js";
 export const workerDal = {
     getAllworkers: () => Worker.findAll(),
 
-     getWorkerByID: (WorkerID) => Worker.findByPk(WorkerID),
+    getWorkerByID: (workerID) => Worker.findByPk(workerID),
 
-   postNewWorker: (WorkerData) => Worker.create(WorkerData),
+    postNewWorker: (workerData) => Worker.create(workerData),
 
-    updateWorker: async (WorkerID, WorkerData) => {
-        await Worker.update(WorkerData, { where: { 
-            WorkerID:WorkerID } 
+    updateWorker: async (workerID, workerData) => {
+        await Worker.update(workerData, {
+            where:
+            {
+                WorkerID: workerID
+            }
         });
-        return Worker.findByPk(WorkerID);
+        return Worker.findByPk(workerID);
     },
-    deleteWorkerByID: (WorkerID) => {
-        return Worker.destroy({where:{
-            WorkerID:WorkerID
-        }});
+
+    deleteWorkerByID: (workerID) => {
+        return Worker.destroy({
+            where:
+            {
+                WorkerID: workerID
+            }
+        });
     }
 };

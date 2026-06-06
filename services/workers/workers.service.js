@@ -1,4 +1,4 @@
-import { workerDal } from "../../dal/workers/workers.dal";
+import { workerDal } from "../../dal/workers/workers.dal.js";
 
 export const getAllWorkersService=async ()=>{
 
@@ -10,25 +10,25 @@ export const getAllWorkersService=async ()=>{
 }
 export const getWorkerByIdService=async (workerID)=>{
 
-    const worker= await workerDal.getWorkerByID(WorkerID)
+    const worker= await workerDal.getWorkerByID(workerID)
     if(!worker){
         throw {status:404,message:"Worker not found"}
     }
     return {status:200,worker:worker};
 }
 export const postNewWorkerService=async (workerData)=>{
-    const newWorker= await workerDal.postNewWorker(WorkerData);
+    const newWorker= await workerDal.postNewWorker(workerData);
     if(!newWorker){
         throw {status:400,message:"Failed to add new worker"};
     }
     return {status:201,message:"New worker has been added",worker:newWorker};
 }
 export const updateWorkerService=async (workerID,workerData)=>{
-    const worker=await workerDal.getWorkerByID(WorkerID);
+    const worker=await workerDal.getWorkerByID(workerID);
     if(!worker){
         throw {status:404,message:"Worker not found"};
     }
-    const UpdatedWorkerData=await workerDal.updateWorker(WorkerID,WorkerData);
+    const UpdatedWorkerData=await workerDal.updateWorker(workerID,workerData);
     return {status:200,message:"Workers data has been updated",worker:UpdatedWorkerData};
 }
 export const  deleteWorkerByIdService=async(workerID)=>{
@@ -36,6 +36,6 @@ export const  deleteWorkerByIdService=async(workerID)=>{
     if(!worker){
         throw {status:404,message:"Worker not found"}
     }
-    const DeletedWorker=await workerDal.deleteWorkerByID(WorkerID);
+    const DeletedWorker=await workerDal.deleteWorkerByID(workerID);
     return {status:200,message:"Worker has been deleted"}
 }

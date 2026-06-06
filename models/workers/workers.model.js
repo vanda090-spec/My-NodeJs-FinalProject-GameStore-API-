@@ -5,7 +5,6 @@ export const Worker = sequelize.define('Worker', {
     WorkerID: {
         type: DataTypes.INTEGER,
         primaryKey: true,
-        autoIncrement: true
     },
     WorkerName: {
         type: DataTypes.STRING,
@@ -19,5 +18,10 @@ export const Worker = sequelize.define('Worker', {
     WorkerSalary: {
         type: DataTypes.FLOAT,
         allowNull: true
+    },
+},
+{
+        tableName: "Workers",
+        timestamps: false
     }
-});
+);

@@ -1,5 +1,5 @@
-import { getAllWorkersService, getWorkerByIdService, postNewWorkerService, deleteWorkerByIdService } from "../../services/workers.js";
-import { updateWorkerService } from "../../services/workers/workers.service";
+import { getAllWorkersService, getWorkerByIdService, postNewWorkerService,updateWorkerService, deleteWorkerByIdService } from "../../services/workers/workers.service.js";
+
 export const getAllworkers = async (req, res) => {
     try {
         const response = await getAllWorkersService();
@@ -14,9 +14,9 @@ export const getAllworkers = async (req, res) => {
 }
 export const getWorkerByID = async (req, res) => {
     try {
-        const WorkerID = req.params.WorkerID;
+        const workerID = req.params.workerID;
 
-        const response = await getWorkerByIdService(WorkerID);
+        const response = await getWorkerByIdService(workerID);
 
         const { status, ...data } = response;
 
@@ -29,9 +29,9 @@ export const getWorkerByID = async (req, res) => {
 export const postNewWorker =  async (req,res) =>{
  try{
        
-    const WorkerData=req.body;
+    const workerData=req.body;
 
-    const response = await postNewWorkerService(WorkerData)
+    const response = await postNewWorkerService(workerData)
 
     const {status,...data}=response;
     
@@ -44,7 +44,7 @@ export const postNewWorker =  async (req,res) =>{
 }
 export const updateWorker = async (req,res)=>{
     try{
-            const workerID=req.params.WorkerID;
+            const workerID=req.params.workerID;
     const workerData=req.body;
 
     const response=await updateWorkerService(workerID,workerData);
@@ -59,9 +59,9 @@ export const updateWorker = async (req,res)=>{
 }
 export const deleteWorkerByID=async(req,res)=>{
     try{
-        const workerID=req.params.WorkerID;
+        const workerID=req.params.workerID;
 
-        const response=await deleteWorkerByIdService(WorkerID);
+        const response=await deleteWorkerByIdService(workerID);
 
         const {status,...data}=response;
 
