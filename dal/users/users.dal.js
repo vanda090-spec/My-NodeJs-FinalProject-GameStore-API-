@@ -4,25 +4,25 @@ import { User } from "../../models/users/users.models.js";
 export const userDal = {
     getUsers: () => User.findAll(),
 
-    getUserById: (UserID) => User.findByPk(UserID),
+    getUserById: (userID) => User.findByPk(userID),
 
-    getUserByEmail: (Email) => {
-        return User.findOne({ where: { email } });
+    getUserByEmail: (email) => {
+        return User.findOne({ where: { userEmail:email } });
     },
 
-    getUserByName: (UserName) => {
-        return User.findOne({ where: { name } });
+    getUserByName: (userName) => {
+        return User.findOne({ where: { userName:userName } });
     },
 
-    registerUser: (UserData) => User.create(userData),
+    registerUser: (userData) => User.create(userData),
 
-    updateUser: async (UserID, UserData) => {
-        await User.update(UserData, { where: { id } });
-        return User.findByPk(id);
+    updateUser: async (userID, userData) => {
+        await User.update(userData, { where: { userID:userID } });
+        return User.findByPk(userID);
     },
 
-    deleteUser: (UserID) => {
-        return User.destroy({ where: { id } });
+    deleteUser: (userID) => {
+        return User.destroy({ where: { userID:userID } });
     },
 
     usersCount: () => {

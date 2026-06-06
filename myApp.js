@@ -10,7 +10,8 @@ export const myApp=express();
 myApp.use(cors());
 myApp.use(express.json());
 
-myApp.use("/main",isValid.apiRoutes)
+myApp.use("/main",isValid,apiRoutes)
 
 
 export default myApp;
+
