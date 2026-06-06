@@ -3,7 +3,7 @@ import { logUserService, registerUserService, updateUserService, userResetServic
 export const logUser = async (req, res) => {
     try {
 
-        const { UserName, password } = req.body;
+        const { userName, password } = req.body;
         
         const response = await logUserService(userName, password);
 
@@ -13,16 +13,16 @@ export const logUser = async (req, res) => {
 
     } catch (err) {
 
-        res.status(err.status || 500).send(err.message)
+        res.status(err.status || 500).json(err.message);
     }
 }
 
 export const regUser = async (req, res) => {
     try {
 
-        const UserData = req.body;
+        const userData = req.body;
 
-        const response = await registerUserService(UserData);
+        const response = await registerUserService(userData);
 
         const { status, ...data } = response
 
@@ -30,14 +30,14 @@ export const regUser = async (req, res) => {
 
     } catch (err) {
 
-        res.status(err.status || 500).send(err.message)
+        res.status(err.status || 500).json(err.message);
     }
 }
 
 export const updatePassword = async (req, res) => {
     try {
 
-        const { UserID } = req.params;
+        const { userID } = req.params;
 
         const { updatedPassword } = req.body;
 
@@ -49,16 +49,16 @@ export const updatePassword = async (req, res) => {
 
     } catch (err) {
 
-        res.status(err.status || 500).send(err.message)
+        res.status(err.status || 500).json(err.message);
     }
 }
 
 export const resetPassword = async (req, res) => {
     try {
 
-        const { UserID,newPassword } = req.body;
+        const { userID,newPassword } = req.body;
 
-        const response = await userResetService(UserID,newPassword);
+        const response = await userResetService(userID,newPassword);
 
         const { status, ...data } = response
 
@@ -66,6 +66,6 @@ export const resetPassword = async (req, res) => {
 
     } catch (err) {
 
-        res.status(err.status || 500).send(err.message)
+        res.status(err.status || 500).json(err.message);
     }
 }

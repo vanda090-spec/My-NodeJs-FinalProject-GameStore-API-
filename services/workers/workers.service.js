@@ -1,6 +1,6 @@
 import { workerDal } from "../../dal/workers/workers.dal";
 
-export const getAllworkers=async ()=>{
+export const getAllWorkersService=async ()=>{
 
     const workers= await workerDal.getAllworkers();
     if(!workers || workers.length===0){
@@ -8,7 +8,7 @@ export const getAllworkers=async ()=>{
     }
     return {status:200,workers:workers};
 }
-export const getWorkerByID=async (WorkerID)=>{
+export const getWorkerByIdService=async (workerID)=>{
 
     const worker= await workerDal.getWorkerByID(WorkerID)
     if(!worker){
@@ -16,14 +16,14 @@ export const getWorkerByID=async (WorkerID)=>{
     }
     return {status:200,worker:worker};
 }
-export const postNewWorker=async (WorkerData)=>{
+export const postNewWorkerService=async (workerData)=>{
     const newWorker= await workerDal.postNewWorker(WorkerData);
     if(!newWorker){
         throw {status:400,message:"Failed to add new worker"};
     }
     return {status:201,message:"New worker has been added",worker:newWorker};
 }
-export const updateWorker=async (WorkerID,WorkerData)=>{
+export const updateWorkerService=async (workerID,workerData)=>{
     const worker=await workerDal.getWorkerByID(WorkerID);
     if(!worker){
         throw {status:404,message:"Worker not found"};
@@ -31,11 +31,11 @@ export const updateWorker=async (WorkerID,WorkerData)=>{
     const UpdatedWorkerData=await workerDal.updateWorker(WorkerID,WorkerData);
     return {status:200,message:"Workers data has been updated",worker:UpdatedWorkerData};
 }
-export const  deleteWorkerByID=async(WorkerID)=>{
-    const worker=await workerDal.getWorkerByID(WorkerID);
+export const  deleteWorkerByIdService=async(workerID)=>{
+    const worker=await workerDal.getWorkerByID(workerID);
     if(!worker){
         throw {status:404,message:"Worker not found"}
     }
     const DeletedWorker=await workerDal.deleteWorkerByID(WorkerID);
-    return {status:200,message:"Worker has been deleted",WorkerID:DeletedWorker}
+    return {status:200,message:"Worker has been deleted"}
 }

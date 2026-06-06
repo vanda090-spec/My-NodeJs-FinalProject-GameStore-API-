@@ -12,12 +12,12 @@ export const Worker = sequelize.define('Worker', {
         allowNull: true,
 
     },
-    WorkerRole:{
-        type:DataTypes.STRING,
-        allowNull:true,
+    WorkerRole: {
+        type: DataTypes.STRING,
+        allowNull: true,
     },
-    WorkerSalary:{
-        type:DataTypes.FLOAT,
-        allowNull:true
+    WorkerSalary: {
+        type: DataTypes.FLOAT,
+        allowNull: true
     }
 });
