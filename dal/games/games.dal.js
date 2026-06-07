@@ -1,23 +1,23 @@
-import {Worker} from "../../models/workers/workers.model.js";
+import {Games} from "../../models/games/games.model.js";
 export const gameDal = {
-   getAllGames: () => Worker.findAll(),
+   getAllGames: () => Games.findAll(),
 
-   getGamesByID: (gameID) => Worker.findByPk(gameID),
+   getGamesByID: (gameID) => Games.findByPk(gameID),
 
-    postNewGame: (gameData) => Worker.create(gameData),
+    postNewGame: (gameData) => Games.create(gameData),
 
     updateGame: async (gameID, gameData) => {
-        await Worker.update(gameData, {
+        await Games.update(gameData, {
             where:
             {
                 GameID: gameID
             }
         });
-        return Worker.findByPk(gameID);
+        return Games.findByPk(gameID);
     },
 
     deleteGameByID: (gameID) => {
-        return Worker.destroy({
+        return Games.destroy({
             where:
             {
                 GameID: gameID

@@ -16,7 +16,7 @@ export const Games = sequelize.define('Games', {
         allowNull: true,
     },
     GameCategory: {
-        type: DataTypes.FLOAT,
+        type: DataTypes.STRING,
         allowNull: true
     },
     GameDateAdded:{
