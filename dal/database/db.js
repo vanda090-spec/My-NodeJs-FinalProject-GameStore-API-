@@ -6,14 +6,11 @@ export const sequelize = new Sequelize(
     sql.user,
     sql.password, {
     dialect: "mssql",
-    host: sql.host,
-
+    host:sql.host,
     dialectOptions: {
         options: {
-            instanceName: sql.instanceName,
-            trustServerCertificate: true
+            instanceName:sql.instanceName,
         }
     }
-
 }
 );

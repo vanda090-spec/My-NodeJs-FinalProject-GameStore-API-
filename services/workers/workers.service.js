@@ -28,8 +28,8 @@ export const updateWorkerService=async (workerID,workerData)=>{
     if(!worker){
         throw {status:404,message:"Worker not found"};
     }
-    const UpdatedWorkerData=await workerDal.updateWorker(workerID,workerData);
-    return {status:200,message:"Workers data has been updated",worker:UpdatedWorkerData};
+    const updatedWorkerData=await workerDal.updateWorker(workerID,workerData);
+    return {status:200,message:"Workers data has been updated",worker:updatedWorkerData};
 }
 export const  deleteWorkerByIdService=async(workerID)=>{
     const worker=await workerDal.getWorkerByID(workerID);

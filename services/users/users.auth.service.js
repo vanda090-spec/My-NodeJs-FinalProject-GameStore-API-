@@ -11,15 +11,15 @@ export const logUserService = async (userName, password) => {
         throw { status: 400, message: "User not found" };
     }
 
-    const isValid = await comparePassword(password, user.password);
+    const isValid = await comparePassword(password, user.userPassword);
     if (!isValid) {
         throw { status: 400, message: "Invalid user or password name" };
     }
 
     const token = createToken(
         {
-            id: user.id,
-            name: user.name
+            id: user.userID,
+            name: user.userName
         },
         {
             expiresIn: "1h"
@@ -28,17 +28,17 @@ export const logUserService = async (userName, password) => {
     return { status: 200, message: "User has been logged successfully", token };
 };
 
-export const registerUserService = async (UserData) => {
+export const registerUserService = async (userData) => {
 
-    UserData.password = await hashPassword(UserData.password);
+    userData.userPassword = await hashPassword(userData.userPassword);
 
-    const user = await userDal.registerUser(UserData);
+    const user = await userDal.registerUser(userData);
 
     if (!user) {
         throw { status: 400, message: "Invalid data" };
     }
 
-    const { password, ...cleanUser } = user
+    const { userPassword, ...cleanUser } = user
 
     return { status: 201, message: "User has been registered successfully", user: cleanUser };
 };
@@ -47,31 +47,31 @@ export const updateUserService = async (userID, updatedPassword) => {
 
     const hashedPassword = await hashPassword(updatedPassword);
 
-    const user = await userDal.updateUser(userID, { password: hashedPassword })
+    const user = await userDal.updateUser(userID, { userPassword: hashedPassword })
 
     if (!user) {
         throw { status: 400, message: "Invalid username / password" };
     }
 
-    const { password, ...cleanUser } = user;
+    const { userPassword, ...cleanUser } = user;
 
     return { status: 200, message: "User/Password has been updated successfully", user: cleanUser };
 };
 
-export const userResetService = async (UserData, newPassword) => {
-    if (!UserData || !newPassword) {
+export const userResetService = async (userData, newPassword) => {
+    if (!userData || !newPassword) {
         throw { status: 400, message: "Invalid user/password" };
     }
 
     const hashedPassword = await hashPassword(newPassword);
 
-    const user= await userDal.updateUser(UserData,{password:hashedPassword});
+    const user= await userDal.updateUser(userData,{userPassword:hashedPassword});
 
     if(!user){
         throw {status:400,message:"User not found"};
     }
 
-    const {password,...cleanUser}=user;
+    const {userPassword,...cleanUser}=user;
     return {status:200,message:"Password has been reset successfuly",user:cleanUser}
 };
 

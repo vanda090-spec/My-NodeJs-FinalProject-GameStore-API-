@@ -9,7 +9,7 @@ export const sql={
     host:process.env.DB_SERVER,
     instanceName:process.env.DB_INSTANCE,
     user:process.env.DB_USER,
-    password:process.env.DB_PASS
+    password:process.env.DB_PASS,
 };
 
 export default {port,jwtSecret,sql};
