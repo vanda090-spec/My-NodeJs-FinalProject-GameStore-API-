@@ -1,5 +1,6 @@
+import { Sequelize, DataTypes } from 'sequelize';
 import { sequelize } from "../../dal/database/db.js";
-import { DataTypes } from "sequelize";
+
 
 export const Worker = sequelize.define('Worker', {
     WorkerID: {

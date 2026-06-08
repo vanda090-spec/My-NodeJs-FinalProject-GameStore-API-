@@ -1,5 +1,5 @@
-import { sequelize } from "../../dal/database/db.js";
-import { DataTypes } from "sequelize";
+import { Sequelize, DataTypes } from 'sequelize';
+import { sequelize } from '../../dal/database/db.js';
 
 export const Games = sequelize.define('Games', {
     GameID: {
