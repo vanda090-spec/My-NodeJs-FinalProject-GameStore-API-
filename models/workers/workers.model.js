@@ -6,6 +6,7 @@ export const Worker = sequelize.define('Worker', {
     WorkerID: {
         type: DataTypes.INTEGER,
         primaryKey: true,
+        autoIncrement:true
     },
     WorkerName: {
         type: DataTypes.STRING,

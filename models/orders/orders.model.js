@@ -5,6 +5,7 @@ export const Order = sequelize.define('Order', {
     OrderID: {
         type: DataTypes.INTEGER,
         primaryKey: true,
+        autoIncrement:true
     },
     GameID: {
         type: DataTypes.INTEGER,

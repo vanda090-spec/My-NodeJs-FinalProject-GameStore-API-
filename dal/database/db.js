@@ -10,6 +10,11 @@ export const sequelize = new Sequelize(
     dialectOptions: {
         options: {
             instanceName:sql.instanceName,
+            trustServerCertificate:true,
+            encrypt:false,
+            connectTimeout:15000,
+            requestTimeout:15000
+            
         }
     }
 }
