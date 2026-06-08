@@ -1,5 +1,5 @@
 import { DataTypes } from 'sequelize';
-import { sequelize } from '../../dal/database/db';
+import { sequelize } from '../../dal/database/db.js';
 
 export const Order = sequelize.define('Order', {
     OrderID: {

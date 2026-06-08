@@ -5,27 +5,43 @@ export const User = sequelize.define('User', {
     userID: {
         type: DataTypes.INTEGER,
         primaryKey: true,
-        autoIncrement: true
+        autoIncrement: true, 
     },
     userName: {
         type: DataTypes.STRING,
         allowNull: false,
+        validate:{
+            is:/^[a-z]+$/i        
+        }
 
     },
     userPassword: {
         type: DataTypes.STRING,
         allowNull: false,
+        validate:{
+            len:[6,100]
+        }
     },
     userEmail: {
         type: DataTypes.STRING,
-        allowNull: false
+        unique:true,
+        allowNull: false,
+        validate:{
+            isEmail:true
+        }
     },
     userPhone: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
+        validate:{
+            len:[9,15]
+        }
     },
     userCountry: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
+        validate:{
+             is: /^[a-z]+$/i
+        }
     }
 });

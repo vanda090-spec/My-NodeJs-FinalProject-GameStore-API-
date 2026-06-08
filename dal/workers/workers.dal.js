@@ -1,4 +1,5 @@
 import {Worker} from "../../models/workers/workers.model.js";
+
 export const workerDal = {
     getAllworkers: () => Worker.findAll(),
 

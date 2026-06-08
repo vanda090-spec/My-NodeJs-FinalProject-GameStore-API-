@@ -5,6 +5,7 @@ export const Games = sequelize.define('Games', {
     GameID: {
         type: DataTypes.INTEGER,
         primaryKey: true,
+        autoIncrement:true
     },
     GameName: {
         type: DataTypes.STRING,

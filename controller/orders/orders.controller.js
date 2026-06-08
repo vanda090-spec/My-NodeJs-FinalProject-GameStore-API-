@@ -40,7 +40,7 @@ export const  postNewOrder = async(req,res)=>{
 export const updateOrder = async(req,res)=>{
     try {
         const {orderID}=req.params;
-        const {orderData}=req.body;
+        const orderData=req.body;
 
         const response= await updateOrderService(orderID,orderData);
         const {status,...data}=response;
