@@ -1,21 +1,31 @@
 import { hashPassword } from "../../utils/hashPassword.js";
 import { comparePassword } from "../../utils/comparePassword.js";
 import { createToken } from "../../utils/token.js";
+import { createLogger } from "../../utils/logger.js";
+
 import { userDal } from "../../dal/users/users.dal.js";
 
+
+const logger = createLogger("UsersAuthService");
+
 export const getUsers = async ()=>{
-    
+
 }
 export const logUserService = async (userName, userPassword) => {
 
     const user = await userDal.getUserByName(userName);
 
     if (!user) {
-        throw { status: 400, message: "User not found" };
+        const message = `User ${userName} not found`;
+            logger.error(message)
+        throw { status: 400, message};
+    
     }
     const isValid = await comparePassword(userPassword, user.userPassword);
     if (!isValid) {
-        throw { status: 400, message: "Invalid user or password name" };
+        const message = "Invalid user or password";
+        logger.warn(message);
+        throw { status: 400,message:message};
         
     }
 
@@ -28,7 +38,9 @@ export const logUserService = async (userName, userPassword) => {
             expiresIn: "1h"
         }
     );
-    return { status: 200, message: "User has been logged successfully", token };
+    const message = `User ${userName} logged in`;
+    logger.info(message);
+    return { status: 200, message, token };
 };
 
 export const registerUserService = async (userData) => {
@@ -38,12 +50,15 @@ export const registerUserService = async (userData) => {
     const user = await userDal.registerUser(userData);
 
     if (!user) {
-        throw { status: 400, message: "Invalid data" };
+        const message = "Invalid data";
+        logger.error(message)
+        throw { status: 400,message:message};
     }
 
     const { userPassword, ...cleanUser } = user
-
-    return { status: 201, message: "User has been registered successfully", user: cleanUser };
+    const message = `New user ${user.userName} registered`;
+    logger.info(message);
+    return { status: 201, message,user: cleanUser };
 };
 
 export const updateUserService = async (userID, updatedPassword) => {
@@ -53,17 +68,22 @@ export const updateUserService = async (userID, updatedPassword) => {
     const user = await userDal.updateUser(userID, { userPassword: hashedPassword })
 
     if (!user) {
-        throw { status: 400, message: "Invalid username / password" };
+        const message = `User ${userID} not found`;
+        logger.error(message);
+        throw { status: 400, message:message};
     }
 
     const { userPassword, ...cleanUser } = user;
-
-    return { status: 200, message: "User/Password has been updated successfully", user: cleanUser };
+    const message = `Password updated for ${userID}`;
+    logger.info(message);
+    return { status: 200, message:message, user: cleanUser };
 };
 
 export const userResetService = async (userData, newPassword) => {
     if (!userData || !newPassword) {
-        throw { status: 400, message: "Invalid user/password" };
+         const message = "Invalid password";
+        logger.error(message)
+        throw { status: 400, message:message};
     }
 
     const hashedPassword = await hashPassword(newPassword);
@@ -71,11 +91,15 @@ export const userResetService = async (userData, newPassword) => {
     const user= await userDal.updateUser(userData,{userPassword:hashedPassword});
 
     if(!user){
-        throw {status:400,message:"User not found"};
+          const message = `User ${userData.userName} not found`;
+        logger.error(message)
+        throw {status:400,message:message};
     }
 
     const {userPassword,...cleanUser}=user;
-    return {status:200,message:"Password has been reset successfuly",user:cleanUser}
+    const message = "Password has been reset successfuly";
+    logger.info(message);
+    return {status:200,message:message,user:cleanUser}
 };
 
 
