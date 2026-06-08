@@ -7,8 +7,8 @@ import gamesRoutes from "../routes/games/games.js";
 export const router=Router();
 
 
-router.use('/usersInfo',usersInfoRoutes);
-router.use('/usersAuth',usersAuthRoutes);
+router.use('/users/info',usersInfoRoutes);
+router.use('/users/auth',usersAuthRoutes);
 router.use('/workers',workersRoutes);
 router.use('/games',gamesRoutes);
 
