@@ -6,10 +6,12 @@ const logger = createLogger("dbConnection");
 export const checkConnection= async ()=>{
 try {
     await sequelize.authenticate();
-    logger.info("Successfuly connected to DB");
+     const message = "Successfully connected to db";
+    logger.info(message);
     
 }catch(err){
-    logger.error("DB connection has failed")
+      const message = "DB connection has failed";
+    logger.error(message)
 
     throw err
 }
