@@ -6,6 +6,6 @@ export const getOrderByIDService=
 
 export const postNewOrderService=
 
-export const updateOrder=
+export const updateOrderService=
 
 export const deleteOrderByIDService=
