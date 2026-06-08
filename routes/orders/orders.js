@@ -1,15 +1,16 @@
 import { Router } from "express";
+import {getAllOrders,getOrderByID,postNewOrder,updateOrder,deleteOrderByID} from "../../controller/orders/orders.controller.js";
 
 export const router = Router();
 
 router.get('/', getAllOrders);
-router.get('/:gameID', getOrderByID);
+router.get('/:orderID', getOrderByID);
 
 router.post('/', postNewOrder);
 
-router.put('/:gameID', updateOrder);
+router.put('/:orderID', updateOrder);
 
-router.delete('/:gameID', deleteOrderByID);
+router.delete('/:orderID', deleteOrderByID);
 
 
 

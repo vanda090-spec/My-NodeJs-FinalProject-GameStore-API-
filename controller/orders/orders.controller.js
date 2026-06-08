@@ -26,7 +26,7 @@ export const getOrderByID = async(req,res)=>{
 
 export const  postNewOrder = async(req,res)=>{
     try {
-        const {orderData}=req.body;
+        const orderData=req.body;
 
         const response= await postNewOrderService(orderData);
         const {status,...data}=response;

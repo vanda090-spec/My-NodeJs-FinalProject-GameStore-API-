@@ -1,13 +1,13 @@
 import {Order} from "../../models/orders/orders.model.js";
 
 export const orderDal = {
-   getAllGames: () => Order.findAll(),
+   getAllOrder: () => Order.findAll(),
 
-   getGamesByID: (orderID) => Order.findByPk(orderID),
+   getOrderByID: (orderID) => Order.findByPk(orderID),
 
-    postNewGame: (orderData) => Order.create(orderData),
+    postNewOrder: (orderData) => Order.create(orderData),
 
-    updateGame: async (orderID, orderData) => {
+    updateOrder: async (orderID, orderData) => {
         await Order.update(orderData, {
             where:
             {
@@ -17,11 +17,11 @@ export const orderDal = {
         return Order.findByPk(orderID);
     },
 
-    deleteGameByID: (orderID) => {
+    deleteOrderByID: (orderID) => {
         return Order.destroy({
             where:
             {
-                Order: orderID
+                OrderID: orderID
             }
         });
     }
