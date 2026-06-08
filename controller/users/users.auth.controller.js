@@ -3,9 +3,9 @@ import { logUserService, registerUserService, updateUserService, userResetServic
 export const logUser = async (req, res) => {
     try {
 
-        const { userName, password } = req.body;
+        const { userName, userPassword } = req.body;
         
-        const response = await logUserService(userName, password);
+        const response = await logUserService(userName,userPassword);
 
         const { status, ...data } = response
 

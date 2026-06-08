@@ -3,17 +3,20 @@ import { comparePassword } from "../../utils/comparePassword.js";
 import { createToken } from "../../utils/token.js";
 import { userDal } from "../../dal/users/users.dal.js";
 
-export const logUserService = async (userName, password) => {
+export const getUsers = async ()=>{
+    
+}
+export const logUserService = async (userName, userPassword) => {
 
     const user = await userDal.getUserByName(userName);
 
     if (!user) {
         throw { status: 400, message: "User not found" };
     }
-
-    const isValid = await comparePassword(password, user.userPassword);
+    const isValid = await comparePassword(userPassword, user.userPassword);
     if (!isValid) {
         throw { status: 400, message: "Invalid user or password name" };
+        
     }
 
     const token = createToken(

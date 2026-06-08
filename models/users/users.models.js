@@ -44,4 +44,9 @@ export const User = sequelize.define('User', {
              is: /^[a-z]+$/i
         }
     }
-});
+},
+{
+        tableName: "Users",
+        timestamps: false
+    }
+);
