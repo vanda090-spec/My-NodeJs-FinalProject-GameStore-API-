@@ -1,5 +1,5 @@
 import { getAllGamesService, getGamesByIDService, postNewGameService, updateGameService, deleteGameByIDService } from "../../services/games/games.service.js";
-import {getLiveGamesService,gamesByPlatformService,gamesByCategoryService,gamesByReleaseDateService,gamesByFilterService ,gamaesByDetailsService,liveGiveawaysService, latestNewsService} from '../../services/games/games.externalApi.service.js';
+import {getLiveGamesService,gamesByPlatformService,gamesByCategoryService,gamesByReleaseDateService,gamesByFilterService ,gamesByDetailsService,liveGiveawaysService, latestNewsService} from '../../services/games/games.externalApi.service.js';
 
 export const getAllGames = async (req, res) => {
     try {
@@ -32,7 +32,7 @@ export const getLiveGames = async (req, res) => {
 export const gamesByPlatform = async (req, res) => {
     try {
         const api = "https://www.mmobomb.com/api1/games?platform=windows"
-        const response = await gamesByPlatform(api);
+        const response = await gamesByPlatformService(api);
 
         const { status, ...data } = response;
         res.status(status).json(data);
@@ -83,7 +83,7 @@ export const gamesByFilter = async (req, res) => {
     }
 }
 
-export const gamaesByDetails=async (req,res)=>{
+export const gamesByDetails=async (req,res)=>{
     try{
         const api="https://www.mmobomb.com/api1/game?id=452";
         const response = await gamesByDetailsService(api);
