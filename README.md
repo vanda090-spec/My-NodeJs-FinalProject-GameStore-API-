@@ -14,6 +14,7 @@ The system manages:
 Additional features:
 
 * JWT Authentication
+* JWT Authorization Middleware
 * Password Encryption (bcrypt)
 * Logging System (Winston)
 * SQL Server Database
@@ -40,7 +41,6 @@ Additional features:
 
 ## Project Architecture
 
-```txt
 Routes
 ↓
 Controllers
@@ -50,7 +50,26 @@ Services
 DAL
 ↓
 SQL Server Database
-```
+
+---
+
+## Middleware
+
+The project includes custom middleware components:
+
+### Request Validation Middleware
+
+Validates incoming requests and ensures required data is provided before processing.
+
+### JWT Authentication Middleware
+
+Protects secured routes by:
+
+* Reading the Authorization Header
+* Extracting the Bearer Token
+* Validating the JWT token
+* Attaching the decoded payload to the request object
+* Allowing access only to authenticated users
 
 ---
 

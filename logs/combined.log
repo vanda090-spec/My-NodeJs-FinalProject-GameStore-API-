@@ -461,3 +461,13 @@
 10-06-2026 01:01:01 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
 10-06-2026 01:01:02 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
 10-06-2026 01:01:05 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
+10-06-2026 01:02:29 [[32minfo[39m]: [32mToken UTIL: Generated Token[39m
+10-06-2026 01:02:29 [[32minfo[39m]: [32mUsersAuthService:: User Chen logged in[39m
+10-06-2026 01:04:09 [[32minfo[39m]: [32mUsersInfoService:: Users found:8[39m
+10-06-2026 01:04:22 [[32minfo[39m]: [32mUsersInfoService:: Users found:8[39m
+10-06-2026 01:05:04 [[32minfo[39m]: [32mToken UTIL: Token verified[39m
+10-06-2026 01:05:05 [[32minfo[39m]: [32mUsersInfoService:: User Chen found[39m
+10-06-2026 01:05:17 [[32minfo[39m]: [32mToken UTIL: Token verified[39m
+10-06-2026 01:05:17 [[32minfo[39m]: [32mUsersInfoService:: User Daniel found[39m
+10-06-2026 01:05:49 [[32minfo[39m]: [32mToken UTIL: Token verified[39m
+10-06-2026 01:05:49 [[32minfo[39m]: [32mUsersInfoService:: User Eden found[39m
