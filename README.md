@@ -92,6 +92,17 @@ The project uses Sequelize associations between entities:
 These relationships allow working with connected data using Sequelize ORM and foreign keys.
 
 ---
+## Database
+
+The database creation script is attached separately.
+
+Run the C# database project:
+
+1. Create Database
+2. Create Tables
+3. Insert Sample Data
+
+This will generate the SQL Server database required by the API.
 
 ## Database Setup
 
