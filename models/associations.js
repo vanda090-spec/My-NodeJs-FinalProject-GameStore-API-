@@ -1,5 +1,3 @@
-// models/associations.js
-
 import { User } from "./users/users.models.js"
 import { Order } from "./orders/orders.model.js";
 import { Games } from "./games/games.model.js";
