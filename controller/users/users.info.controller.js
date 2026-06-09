@@ -1,9 +1,9 @@
-
+import {getUsersService,getUserByIdService,deleteUserService} from "../../services/users/users.info.service.js";
 
 export const getAllUsers= async(req,res)=>{ 
     try{
 
-        const response = await getAllUsersService();
+        const response = await getUsersService();
         const {status,...data}=response;
 
         res.status(status).json(data);
@@ -15,7 +15,7 @@ export const getAllUsers= async(req,res)=>{
 
 export const getUserById= async (req,res)=>{
     try{
-        const {userID}=req.body;
+        const {userID}=req.params;
 
     const response = await getUserByIdService(userID);
     const {status,... data}=response;
@@ -23,7 +23,7 @@ export const getUserById= async (req,res)=>{
     res.status(status).json(data)
     }
     catch(err){
-        res.status(err.status || 500).json(data);
+        res.status(err.status || 500).json(err.message);
     }
 }
 

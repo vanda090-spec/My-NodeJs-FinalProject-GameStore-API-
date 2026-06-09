@@ -1,4 +1,5 @@
 import { Router } from "express";
+import {getAllUsers,getUserById,deleteUserByID} from "../../controller/users/users.info.controller.js";
 
 
 const router = Router();

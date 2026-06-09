@@ -4,7 +4,7 @@ export const getAllOrdersService = async () => {
 
     const order = await orderDal.getAllOrder();
 
-    if (!order) {
+    if (!order || order.length==0) {
         throw { status: 404, message: "Order not found" };
     }
 
