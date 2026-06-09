@@ -27,5 +27,3 @@ export const getUserById= async (req,res)=>{
     }
 
 }
-
-export const deleteUser=

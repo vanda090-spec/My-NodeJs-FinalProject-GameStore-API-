@@ -5,11 +5,13 @@ export const User = sequelize.define('User', {
     userID: {
         type: DataTypes.INTEGER,
         primaryKey: true,
-        autoIncrement: true, 
+        autoIncrement: true,
+        field:"UserID" 
     },
     userName: {
         type: DataTypes.STRING,
         allowNull: false,
+        field:"UserName",
         validate:{
             is:/^[a-z]+$/i        
         }
@@ -18,6 +20,7 @@ export const User = sequelize.define('User', {
     userPassword: {
         type: DataTypes.STRING,
         allowNull: false,
+        field:"UserPassword",
         validate:{
             len:[6,100]
         }
@@ -26,6 +29,7 @@ export const User = sequelize.define('User', {
         type: DataTypes.STRING,
         unique:true,
         allowNull: false,
+        field:"UserEmail",
         validate:{
             isEmail:true
         }
@@ -33,6 +37,7 @@ export const User = sequelize.define('User', {
     userPhone: {
         type: DataTypes.STRING,
         allowNull: false,
+        field:"UserPhone",
         validate:{
             len:[9,15]
         }
@@ -40,6 +45,7 @@ export const User = sequelize.define('User', {
     userCountry: {
         type: DataTypes.STRING,
         allowNull: false,
+        field:"UserCountry",
         validate:{
              is: /^[a-z]+$/i
         }

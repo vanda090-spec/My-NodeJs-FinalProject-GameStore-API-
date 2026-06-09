@@ -413,3 +413,9 @@
 08-06-2026 22:46:01 [[32minfo[39m]: [32mdbConnection: Successfuly connected to DB[39m
 08-06-2026 22:46:01 [[32minfo[39m]: [32mdbConnection: Successfuly connected to DB[39m
 08-06-2026 22:46:23 [[32minfo[39m]: [32mdbConnection: Successfuly connected to DB[39m
+09-06-2026 06:43:36 [[32minfo[39m]: [32mdbConnection: Successfully connected to db[39m
+09-06-2026 06:44:21 [[33mwarn[39m]: [33mUsersAuthService: Invalid user or password[39m
+09-06-2026 06:44:30 [[32minfo[39m]: [32mUsersAuthService: User Chen logged in[39m
+09-06-2026 06:45:27 [[32minfo[39m]: [32mUsersAuthService: User Test logged in[39m
+09-06-2026 06:54:57 [[32minfo[39m]: [32mUsersAuthService: User Test logged in[39m
+09-06-2026 06:55:23 [[32minfo[39m]: [32mUsersAuthService: User Test logged in[39m

@@ -8,9 +8,6 @@ import { userDal } from "../../dal/users/users.dal.js";
 
 const logger = createLogger("UsersAuthService");
 
-export const getUsers = async ()=>{
-
-}
 export const logUserService = async (userName, userPassword) => {
 
     const user = await userDal.getUserByName(userName);
