@@ -79,8 +79,8 @@ export const updateUserService = async (userID, updatedPassword) => {
     return { status: 200, message:message, user: cleanUser };
 };
 
-export const userResetService = async (userData, newPassword) => {
-    if (!userData || !newPassword) {
+export const userResetService = async (userID, newPassword) => {
+    if (!userID || !newPassword) {
          const message = "Invalid password";
         logger.error(message)
         throw { status: 400, message:message};
@@ -88,10 +88,10 @@ export const userResetService = async (userData, newPassword) => {
 
     const hashedPassword = await hashPassword(newPassword);
 
-    const user= await userDal.updateUser(userData,{userPassword:hashedPassword});
+    const user= await userDal.updateUser(userID,{userPassword:hashedPassword});
 
     if(!user){
-          const message = `User ${userData.userName} not found`;
+          const message = `User ${userID} not found`;
         logger.error(message)
         throw {status:400,message:message};
     }

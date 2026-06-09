@@ -17,7 +17,7 @@ export const userDal = {
     registerUser: (userData) => User.create(userData),
 
     updateUser: async (userID, userData) => {
-        await User.update(userData, { where: { userID:userID } });
+        await User.update(userData.userID, { where: { userID:userID } });
         return User.findByPk(userID);
     },
 
