@@ -7,7 +7,7 @@ export const router = Router();
 router.get('/', getAllOrders);
 router.get('/:orderID',validateToken,getOrderByID);
 
-router.post('/',postNewOrder);
+router.post('/',validateToken,postNewOrder);
 
 router.put('/:orderID',validateToken,updateOrder);
 

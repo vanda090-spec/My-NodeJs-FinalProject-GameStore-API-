@@ -504,3 +504,24 @@
 10-06-2026 10:24:28 [[32minfo[39m]: [32mUsersAuthService:: User Chen logged in[39m
 10-06-2026 10:25:46 [[32minfo[39m]: [32mToken UTIL: Token verified[39m
 10-06-2026 10:26:55 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
+10-06-2026 10:27:02 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
+10-06-2026 10:27:02 [[32minfo[39m]: [32mToken UTIL: Token verified[39m
+10-06-2026 10:27:22 [[32minfo[39m]: [32mToken UTIL: Token verified[39m
+10-06-2026 10:27:30 [[32minfo[39m]: [32mToken UTIL: Token verified[39m
+10-06-2026 10:27:35 [[32minfo[39m]: [32mToken UTIL: Token verified[39m
+10-06-2026 10:29:06 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
+10-06-2026 10:53:03 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
+10-06-2026 10:53:41 [[32minfo[39m]: [32mToken UTIL: Generated Token[39m
+10-06-2026 10:53:41 [[32minfo[39m]: [32mUsersAuthService:: User Chen logged in[39m
+10-06-2026 10:54:16 [[32minfo[39m]: [32mToken UTIL: Token verified[39m
+10-06-2026 10:55:21 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
+10-06-2026 10:55:22 [[32minfo[39m]: [32mToken UTIL: Token verified[39m
+10-06-2026 10:58:12 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
+10-06-2026 10:58:15 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
+10-06-2026 10:58:16 [[32minfo[39m]: [32mToken UTIL: Token verified[39m
+10-06-2026 10:58:19 [[32minfo[39m]: [32mToken UTIL: Token verified[39m
+10-06-2026 10:59:05 [[32minfo[39m]: [32mToken UTIL: Token verified[39m
+10-06-2026 11:01:18 [[32minfo[39m]: [32mToken UTIL: Generated Token[39m
+10-06-2026 11:01:18 [[32minfo[39m]: [32mUsersAuthService:: User Chen logged in[39m
+10-06-2026 11:01:54 [[32minfo[39m]: [32mToken UTIL: Token verified[39m
+10-06-2026 11:02:27 [[32minfo[39m]: [32mToken UTIL: Token verified[39m
