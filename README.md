@@ -177,7 +177,9 @@ After login, copy the token and send it in Postman Headers:
 Authorization: Bearer YOUR_TOKEN_HERE
 
 Most routes in the project are protected and require a valid JWT token.
+
 Passwords are stored encrypted using bcrypt.
+
 ---
 ## API Modules
 
