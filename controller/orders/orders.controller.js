@@ -21,8 +21,8 @@ export const getOrderByID = async(req,res)=>{
 
         const fixedOrder = {
             ...data,
-            orderDate: dateTimeFormater_il.formatDate(data.OrderDate),
-            orderTime: dateTimeFormater_il.formatTime(data.OrderDate)
+            orderDate: dateTimeFormater_il.formatDate(data.orderID.OrderDate),
+            orderTime: dateTimeFormater_il.formatTime(data.orderID.OrderDate)
         };
 
         res.status(status).json(fixedOrder);
