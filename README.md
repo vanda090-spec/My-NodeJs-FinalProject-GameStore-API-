@@ -157,28 +157,46 @@ http://localhost:2001
 ```
 
 ---
-## Test User
+## Authentication Notice
 
-A test user is available for checking protected routes with JWT.
+The users inserted by the C# database setup project are sample data only.
 
-Login endpoint:
+The authentication system uses bcrypt password hashing, therefore the sample users cannot be used for login.
 
-POST /users/auth/login
+To test authentication:
 
-Request body:
+1. Run the Node.js server.
+2. Create a new user using the Register endpoint.
+3. Login using the newly created account.
 
+### Register Request Example
+
+POST /main/users/auth/register
+
+```json
+{
+  "userName": "Chen",
+  "userPassword": "123456",
+  "userEmail": "chen@gmail.com",
+  "userPhone": "0501234567",
+  "userCountry": "Israel"
+}
+```
+
+### Login Request Example
+
+POST /main/users/auth/login
+
+```json
 {
   "userName": "Chen",
   "userPassword": "123456"
 }
+```
 
-After login, copy the token and send it in Postman Headers:
-
-Authorization: Bearer YOUR_TOKEN_HERE
-
-Most routes in the project are protected and require a valid JWT token.
-
-Passwords are stored encrypted using bcrypt.
+Note:
+The sample users inserted by the C# database setup script are stored as plain text and are intended only for database demonstration purposes.
+Authentication should be tested with a newly registered user.
 
 ---
 ## API Modules

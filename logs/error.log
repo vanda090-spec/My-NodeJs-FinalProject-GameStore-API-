@@ -8,3 +8,7 @@
 10-06-2026 08:03:53 [[31merror[39m]: [31mToken UTIL: Token validation failed[39m
 10-06-2026 08:05:07 [[31merror[39m]: [31mToken UTIL: Token validation failed[39m
 10-06-2026 08:05:44 [[31merror[39m]: [31mToken UTIL: Token validation failed[39m
+10-06-2026 18:46:33 [[31merror[39m]: [31mdbConnection:: DB connection has failed[39m
+10-06-2026 19:01:10 [[31merror[39m]: [31mdbConnection:: DB connection has failed[39m
+10-06-2026 19:45:48 [[31merror[39m]: [31mToken UTIL: Token validation failed[39m
+10-06-2026 19:48:47 [[31merror[39m]: [31mUsersAuthService:: User Dana not found[39m
