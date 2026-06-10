@@ -6,7 +6,7 @@ const router = Router();
 router.post('/login', logUser);
 router.post('/register', regUser);
 
-router.put('/resetPassword', resetPassword);
+router.put('/resetPassword',validateToken, resetPassword);
 router.patch('/:userID/updatePassword',validateToken,updatePassword);
 
 

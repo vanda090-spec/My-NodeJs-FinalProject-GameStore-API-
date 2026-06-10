@@ -5,7 +5,7 @@ import {validateToken} from "../../middleware/validateToken.js";
 
 const router = Router();
 
-router.get('/',getAllUsers);
+router.get('/',validateToken,getAllUsers);
 router.get('/:userID',validateToken,getUserById);
 router.delete('/:userID',validateToken,deleteUserByID);
 
