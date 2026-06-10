@@ -1,4 +1,5 @@
 import {getAllOrdersService,getOrderByIDService,postNewOrderService,updateOrderService,deleteOrderByIDService} from "../../services/orders/orders.service.js";
+import { dateTimeFormater_il } from "../../utils/dateTimeFormater_il.js";
 
 export const  getAllOrders = async(req,res)=>{
     try {
@@ -18,7 +19,14 @@ export const getOrderByID = async(req,res)=>{
         const response = await getOrderByIDService(orderID);
         const {status,...data}=response;
 
-        res.status(status).json(data);
+        const fixedOrder = {
+            ...data,
+            orderDate: dateTimeFormater_il.formatDate(data.OrderDate),
+            orderTime: dateTimeFormater_il.formatTime(data.OrderDate)
+        };
+
+        res.status(status).json(fixedOrder);
+
     }catch(err){
         res.status(err.status || 500).json(err.message);
     }
@@ -63,3 +71,4 @@ export const  deleteOrderByID = async(req,res)=>{
         res.status(err.status || 500).json(err.message);
     }
 }
+
