@@ -543,3 +543,13 @@
 10-06-2026 11:20:05 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
 10-06-2026 11:22:37 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
 10-06-2026 11:24:13 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
+10-06-2026 11:30:15 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
+10-06-2026 11:31:20 [[32minfo[39m]: [32mToken UTIL: Generated Token[39m
+10-06-2026 11:31:20 [[32minfo[39m]: [32mUsersAuthService:: User DonJuan logged in[39m
+10-06-2026 11:31:30 [[32minfo[39m]: [32mToken UTIL: Generated Token[39m
+10-06-2026 11:31:30 [[32minfo[39m]: [32mUsersAuthService:: User DonJuan logged in[39m
+10-06-2026 11:31:56 [[32minfo[39m]: [32mToken UTIL: Token verified[39m
+10-06-2026 11:32:04 [[32minfo[39m]: [32mToken UTIL: Token verified[39m
+10-06-2026 12:20:26 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
+10-06-2026 12:28:04 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
+10-06-2026 12:28:57 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m

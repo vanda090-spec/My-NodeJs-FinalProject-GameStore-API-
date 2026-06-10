@@ -4,13 +4,13 @@ import { getLiveGames,gamesByCategory,latestNews } from "../../controller/games/
 import {validateToken} from "../../middleware/validateToken.js";
 export const router=Router();
 
-router.get('/', getAllGames);
-router.get('/gamesInfo/live',getLiveGames);
-router.get('/gamesInfo/category',gamesByCategory);
-router.get('/gamesInfo/news',latestNews);
+router.get('/',validateToken,getAllGames);
+router.get('/gamesInfo/live',validateToken,getLiveGames);
+router.get('/gamesInfo/category',validateToken,gamesByCategory);
+router.get('/gamesInfo/news',validateToken,latestNews);
 router.get('/:gameID',validateToken,getGamesByID);
 
-router.post('/',postNewGame);
+router.post('/',validateToken,postNewGame);
 
 router.put('/:gameID',validateToken,updateGame);
 

@@ -3,10 +3,10 @@ import { getAllworkers, getWorkerByID,postNewWorker, updateWorker, deleteWorkerB
 import {validateToken} from "../../middleware/validateToken.js";
 const router = Router();
 
-router.get('/', getAllworkers);
+router.get('/',validateToken, getAllworkers);
 router.get('/:workerID',validateToken,getWorkerByID);
 
-router.post('/',postNewWorker);
+router.post('/',validateToken,postNewWorker);
 
 router.put('/:workerID',validateToken,updateWorker);
 
