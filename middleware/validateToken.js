@@ -1,6 +1,6 @@
 import {verifyToken} from "../utils/token.js";
 
-export function validateToken(req, res, next) {
+export const validateToken=(req, res, next) =>{
     try {
         const authHeader = req.headers.authorization;
         const token = authHeader && authHeader.split(' ')[1];
