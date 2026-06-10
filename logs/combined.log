@@ -567,3 +567,64 @@
 10-06-2026 13:00:30 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
 10-06-2026 13:02:07 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
 10-06-2026 13:02:09 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
+10-06-2026 13:38:20 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
+10-06-2026 13:39:25 [[33mwarn[39m]: [33mUsersAuthService:: Invalid user or password[39m
+10-06-2026 13:39:31 [[32minfo[39m]: [32mToken UTIL: Generated Token[39m
+10-06-2026 13:39:31 [[32minfo[39m]: [32mUsersAuthService:: User Chen logged in[39m
+10-06-2026 13:39:41 [[32minfo[39m]: [32mToken UTIL: Generated Token[39m
+10-06-2026 13:39:41 [[32minfo[39m]: [32mUsersAuthService:: User Chen logged in[39m
+10-06-2026 13:39:54 [[32minfo[39m]: [32mToken UTIL: Token verified[39m
+10-06-2026 13:46:27 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
+10-06-2026 13:46:32 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
+10-06-2026 13:46:35 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
+10-06-2026 13:46:38 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
+10-06-2026 13:47:02 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
+10-06-2026 13:49:03 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
+10-06-2026 13:49:12 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
+10-06-2026 13:50:01 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
+10-06-2026 13:50:10 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
+10-06-2026 13:50:15 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
+10-06-2026 13:50:30 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
+10-06-2026 13:50:32 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
+10-06-2026 13:50:38 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
+10-06-2026 13:50:50 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
+10-06-2026 13:50:56 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
+10-06-2026 13:51:24 [[32minfo[39m]: [32mToken UTIL: Token verified[39m
+10-06-2026 13:51:29 [[32minfo[39m]: [32mToken UTIL: Token verified[39m
+10-06-2026 13:51:37 [[32minfo[39m]: [32mToken UTIL: Token verified[39m
+10-06-2026 13:52:57 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
+10-06-2026 13:53:00 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
+10-06-2026 13:53:11 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
+10-06-2026 13:53:15 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
+10-06-2026 13:53:17 [[32minfo[39m]: [32mToken UTIL: Token verified[39m
+10-06-2026 13:54:53 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
+10-06-2026 13:54:57 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
+10-06-2026 13:54:58 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
+10-06-2026 13:55:13 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
+10-06-2026 13:55:57 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
+10-06-2026 13:56:00 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
+10-06-2026 13:56:12 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
+10-06-2026 13:56:17 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
+10-06-2026 13:56:23 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
+10-06-2026 13:56:27 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
+10-06-2026 13:56:34 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
+10-06-2026 13:56:46 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
+10-06-2026 13:56:56 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
+10-06-2026 13:56:59 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
+10-06-2026 13:57:00 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
+10-06-2026 13:57:05 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
+10-06-2026 13:57:08 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
+10-06-2026 13:57:12 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
+10-06-2026 13:57:14 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
+10-06-2026 13:57:24 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
+10-06-2026 13:57:34 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
+10-06-2026 13:59:06 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
+10-06-2026 13:59:28 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
+10-06-2026 13:59:30 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
+10-06-2026 13:59:34 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
+10-06-2026 14:00:50 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
+10-06-2026 14:01:08 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
+10-06-2026 14:01:28 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
+10-06-2026 14:02:02 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
+10-06-2026 14:02:40 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
+10-06-2026 14:02:47 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
