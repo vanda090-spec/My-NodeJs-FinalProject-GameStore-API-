@@ -30,7 +30,7 @@ namespace StoreDB
             {
                 Console.WriteLine(ex.Message);
             }
-            try                  -- Replace YOUR_USERNAME and YOUR_PASSWORD with local SQL Server credentials
+            try                 /* -- Replace YOUR_USERNAME and YOUR_PASSWORD with local SQL Server credentials */
             {
                 SqlConnection mysqlConnection = new SqlConnection(MyDataBaseConnection + "Integrated Security=SSPI;");
                 SqlCommand mysqlCommand = mysqlConnection.CreateCommand();
