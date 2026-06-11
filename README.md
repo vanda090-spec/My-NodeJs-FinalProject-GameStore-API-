@@ -92,19 +92,22 @@ The project uses Sequelize associations between entities:
 These relationships allow working with connected data using Sequelize ORM and foreign keys.
 
 ---
-## Database
 
-The database creation script is attached separately.
+## Database Setup ##1
 
-Run the C# database project:
+The database creation script is attached separately:
 
-1. Create Database
-2. Create Tables
-3. Insert Sample Data
+databaseCreation/CreateGameStoreDatabase.cs
+
+The script will:
+- Create ChenGameStore database
+- Create all tables
+- Create relationships (Foreign Keys)
+- Insert sample data
 
 This will generate the SQL Server database required by the API.
 
-## Database Setup
+## Database Setup##2
 
 Before running the project, make sure SQL Server is installed and running.
 

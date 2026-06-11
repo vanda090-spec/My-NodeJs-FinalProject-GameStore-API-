@@ -651,3 +651,19 @@
 10-06-2026 19:50:27 [[33mwarn[39m]: [33mUsersAuthService:: Invalid user or password[39m
 10-06-2026 19:50:46 [[33mwarn[39m]: [33mUsersAuthService:: Invalid user or password[39m
 10-06-2026 19:51:34 [[33mwarn[39m]: [33mUsersAuthService:: Invalid user or password[39m
+10-06-2026 20:00:20 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
+10-06-2026 20:03:44 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
+10-06-2026 20:03:49 [[32minfo[39m]: [32mUsersAuthService:: New user Cartman registered[39m
+10-06-2026 20:04:17 [[32minfo[39m]: [32mToken UTIL: Generated Token[39m
+10-06-2026 20:04:17 [[32minfo[39m]: [32mUsersAuthService:: User Cartman logged in[39m
+10-06-2026 20:04:34 [[32minfo[39m]: [32mToken UTIL: Token verified[39m
+10-06-2026 20:04:42 [[32minfo[39m]: [32mToken UTIL: Token verified[39m
+10-06-2026 20:05:10 [[32minfo[39m]: [32mToken UTIL: Token verified[39m
+10-06-2026 20:05:24 [[32minfo[39m]: [32mToken UTIL: Token verified[39m
+10-06-2026 20:06:06 [[32minfo[39m]: [32mToken UTIL: Token verified[39m
+10-06-2026 20:06:06 [[32minfo[39m]: [32mUsersInfoService:: Users found:7[39m
+10-06-2026 20:06:16 [[32minfo[39m]: [32mToken UTIL: Token verified[39m
+10-06-2026 20:06:16 [[32minfo[39m]: [32mUsersInfoService:: User Chen found[39m
+10-06-2026 20:11:38 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
+11-06-2026 18:29:47 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
+11-06-2026 18:32:14 [[32minfo[39m]: [32mdbConnection:: Successfully connected to db[39m
