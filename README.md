@@ -93,9 +93,9 @@ These relationships allow working with connected data using Sequelize ORM and fo
 
 ---
 
-## Database Setup ##1
+## Database Setup #1
 
-The database creation script is attached separately:
+The database creation script:
 
 databaseCreation/CreateGameStoreDatabase.cs
 
@@ -107,7 +107,7 @@ The script will:
 
 This will generate the SQL Server database required by the API.
 
-## Database Setup##2
+## Database Setup #2
 
 Before running the project, make sure SQL Server is installed and running.
 
