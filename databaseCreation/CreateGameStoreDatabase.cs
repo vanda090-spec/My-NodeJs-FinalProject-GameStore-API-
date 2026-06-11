@@ -30,21 +30,21 @@ namespace StoreDB
             {
                 Console.WriteLine(ex.Message);
             }
-            try
+            try                  -- Replace YOUR_USERNAME and YOUR_PASSWORD with local SQL Server credentials
             {
                 SqlConnection mysqlConnection = new SqlConnection(MyDataBaseConnection + "Integrated Security=SSPI;");
                 SqlCommand mysqlCommand = mysqlConnection.CreateCommand();
-                mysqlCommand.CommandText = "if not exists (select * from sys.server_principals where name = 'chenusers')\r" +
-                    "\nbegin\r" +
-                    "\ncreate login chenusers with password = '12345', check_policy = off;" +
+                mysqlCommand.CommandText = "if not exists (select * from sys.server_principals where name = 'YOUR_USERNAME')\r" +
+                    "\nbegin\r" +           
+                    "\ncreate login YOUR_USERNAME with password =  'YOUR_PASSWORD', check_policy = off;" +
                     "\nend\r\n\r\nuse chengamestore;" +
                     "\n" +
-                    "\nif not exists (select * from sys.database_principals where name = 'chenusers')" +
+                    "\nif not exists (select * from sys.database_principals where name = 'YOUR_USERNAME')" +
                     "\nbegin" +
-                    "\ncreate user chenusers for login chenusers;" +
+                    "\ncreate user YOUR_USERNAME for login YOUR_USERNAME;" +
                     "\nend" +
                     "\n" +
-                    "\nalter role db_owner add member chenusers;";
+                    "\nalter role db_owner add member YOUR_USERNAME;";
                 mysqlConnection.Open();
                 int message = mysqlCommand.ExecuteNonQuery();
                 Console.WriteLine(message + " row affected");
