@@ -28,8 +28,8 @@ export const logUserService = async (userName, userPassword) => {
 
     const token = createToken(
         {
-            id: user.userID,
-            name: user.userName
+            userID: user.userID,
+            userName: user.userName
         },
         {
             expiresIn: "1h"

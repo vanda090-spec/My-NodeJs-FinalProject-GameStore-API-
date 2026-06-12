@@ -2,8 +2,9 @@ import {getUsersService,getUserByIdService,deleteUserService} from "../../servic
 
 export const getAllUsers= async(req,res)=>{ 
     try{
+        const userID=req.user.userID;
 
-        const response = await getUsersService();
+        const response = await getUsersService(userID);
         const {status,...data}=response;
 
         res.status(status).json(data);

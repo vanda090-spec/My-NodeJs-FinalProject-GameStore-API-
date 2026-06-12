@@ -13,7 +13,8 @@ export const User = sequelize.define('User', {
         allowNull: false,
         field:"UserName",
         validate:{
-            is:/^[a-z]+$/i        
+            is:/^[a-z]+$/i,
+            len:[1,20]        
         }
 
     },
