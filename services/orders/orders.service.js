@@ -1,14 +1,20 @@
 import { orderDal } from "../../dal/orders/orders.dal.js";
+import { createLogger } from "../../utils/logger.js";
+
+const logger = createLogger('Orders:')
 
 export const getAllOrdersService = async () => {
 
-    const order = await orderDal.getAllOrder();
+    const orders = await orderDal.getAllOrder();
 
-    if (!order || order.length==0) {
-        throw { status: 404, message: "Order not found" };
+    if (!orders || orders.length == 0) {
+        const msg = "No orders found";
+        logger.warn(msg);
+        throw { status: 404, message: msg };
     }
-
-    return { status: 200, message: "Order found", order: order }
+    const msg = `Found ${orders.length} orders`;
+    logger.info(msg);
+    return { status: 200, message: msg, orders }
 }
 
 export const getOrderByIDService = async (orderID) => {
@@ -16,39 +22,53 @@ export const getOrderByIDService = async (orderID) => {
     const order = await orderDal.getOrderByID(orderID);
 
     if (!order) {
-        throw { status: 400, message: "Invalid order id" };
+        const msg = `Order ${orderID} not found`;
+        logger.warn(msg);
+        throw { status: 404, message: msg };
     }
-
-    return { status: 200, orderID: order };
+    const msg = `Order ID found:${orderID}`;
+    logger.info(msg);
+    return { status: 200, message: msg, order };
 }
 
-export const postNewOrderService = async (orderData)=>{
+export const postNewOrderService = async (orderData) => {
 
-    const order=await orderDal.postNewOrder(orderData);
-    if(!order){
-        throw {status:400,message:"Invalid data"};
+    const order = await orderDal.postNewOrder(orderData);
+    if (!order) {
+        const msg = `Failed to create new order`;
+        logger.error(msg);
+        throw { status: 400, message: msg };
     }
-    return {status:200,order:order}
+    const msg = `New order : ${order.OrderID} created`;
+    logger.info(msg);
+    return { status: 201, message: msg, order }
 }
 
-export const updateOrderService =async(orderID,orderData)=>{
+export const updateOrderService = async (orderID, orderData) => {
 
-    const order=await orderDal.getOrderByID(orderID);
-    if(!order){
-        throw {status:400,message:"Inavalid id"};
+    const order = await orderDal.getOrderByID(orderID);
+    if (!order) {
+        const msg = `Order ${orderID} not found`;
+        logger.warn(msg);
+        throw { status: 404, message: msg };
     }
-    const updatedOrder=await orderDal.updateOrder(orderID,orderData);
-    
-    return {status:200,updatedOrder:updatedOrder}
+    const updatedOrder = await orderDal.updateOrder(orderID, orderData);
+    const msg = `Updated order: ${orderID}`;
+    logger.info(msg);
+
+    return { status: 200, message: msg, updatedOrder }
 }
 
-export const deleteOrderByIDService = async (orderID)=>{
+export const deleteOrderByIDService = async (orderID) => {
 
-    const order=await orderDal.getOrderByID(orderID);
-    if(!order){
-        throw {status:400,message:"Failed to delete order"};
+    const order = await orderDal.getOrderByID(orderID);
+    if (!order) {
+        const msg = `Order ${orderID} not found`;
+        logger.warn(msg);
+        throw { status: 404, message: msg };
     }
-
-    const deletedOrder=await orderDal.deleteOrderByID(orderID);
-    return{status:200,message:"Order deleted successfully"};
+    await orderDal.deleteOrderByID(orderID);
+    const msg = `Deleted order id ${orderID} successfully`;
+    logger.info(msg);
+    return { status: 200, message: msg };
 }

@@ -1,41 +1,67 @@
 import { workerDal } from "../../dal/workers/workers.dal.js";
+import { createLogger } from "../../utils/logger.js";
 
-export const getAllWorkersService=async ()=>{
+const logger = createLogger('Workers:')
 
-    const workers= await workerDal.getAllworkers();
-    if(!workers || workers.length===0){
-        throw {status:404,message:"No workers found"}
-    }
-    return {status:200,workers:workers};
-}
-export const getWorkerByIdService=async (workerID)=>{
+export const getAllWorkersService = async () => {
+    const workers = await workerDal.getAllworkers();
 
-    const worker= await workerDal.getWorkerByID(workerID)
-    if(!worker){
-        throw {status:404,message:"Worker not found"}
+    if (!workers || workers.length === 0) {
+        const msg = "No workers found";
+        logger.error(msg);
+        throw { status: 404, message: msg }
     }
-    return {status:200,worker:worker};
+    const msg = `Found ${workers.length} workers`;
+    logger.info(msg);
+    return { status: 200, workers };
 }
-export const postNewWorkerService=async (workerData)=>{
-    const newWorker= await workerDal.postNewWorker(workerData);
-    if(!newWorker){
-        throw {status:400,message:"Failed to add new worker"};
+export const getWorkerByIdService = async (workerID) => {
+
+    const worker = await workerDal.getWorkerByID(workerID)
+    if (!worker) {
+        const msg = `Worker ${workerID} not found`
+        logger.error(msg)
+        throw { status: 404, message: msg }
     }
-    return {status:201,message:"New worker has been added",worker:newWorker};
+    const msg = `Worker ${workerID} found`
+    logger.info(msg)
+    return { status: 200, worker };
 }
-export const updateWorkerService=async (workerID,workerData)=>{
-    const worker=await workerDal.getWorkerByID(workerID);
-    if(!worker){
-        throw {status:404,message:"Worker not found"};
+export const postNewWorkerService = async (workerData) => {
+    const newWorker = await workerDal.postNewWorker(workerData);
+
+    if (!newWorker) {
+        const msg = `Failed to add new worker`;
+        logger.error(msg)
+        throw { status: 400, message: msg };
     }
-    const updatedWorkerData=await workerDal.updateWorker(workerID,workerData);
-    return {status:200,message:"Workers data has been updated",worker:updatedWorkerData};
+    const msg = `Added new worker ${newWorker.WorkerID}`
+    logger.info(msg)
+    return { status: 201, message: msg, worker: newWorker };
 }
-export const  deleteWorkerByIdService=async(workerID)=>{
-    const worker=await workerDal.getWorkerByID(workerID);
-    if(!worker){
-        throw {status:404,message:"Worker not found"}
+export const updateWorkerService = async (workerID, workerData) => {
+    const worker = await workerDal.getWorkerByID(workerID);
+
+    if (!worker) {
+        const msg = `Worker not found`;
+        logger.error(msg)
+        throw { status: 404, message: msg };
     }
-    const DeletedWorker=await workerDal.deleteWorkerByID(workerID);
-    return {status:200,message:"Worker has been deleted"}
+    const updatedWorkerData = await workerDal.updateWorker(workerID, workerData);
+    const msg = `Worker ${workerID} data has been updated`;
+    logger.info(msg);
+    return { status: 200, message: msg, worker: updatedWorkerData };
+}
+export const deleteWorkerByIdService = async (workerID) => {
+    const worker = await workerDal.getWorkerByID(workerID);
+
+    if (!worker) {
+        const msg = `Worker ${workerID} not found`;
+        logger.error(msg)
+        throw { status: 404, message: msg }
+    }
+    await workerDal.deleteWorkerByID(workerID);
+    const msg = `Worker ${workerID} has been deleted`;
+    logger.info(msg);
+    return { status: 200, message: msg }
 }

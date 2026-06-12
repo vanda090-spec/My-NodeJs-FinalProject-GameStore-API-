@@ -1,7 +1,7 @@
 import { sequelize } from "../database/db.js";
 import { createLogger } from "../../utils/logger.js";
 
-const logger = createLogger("dbConnection:");
+const logger = createLogger("DB");
 
 export const checkConnection= async ()=>{
 try {
