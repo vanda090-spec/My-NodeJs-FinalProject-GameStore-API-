@@ -1,7 +1,7 @@
 import { orderDal } from "../../dal/orders/orders.dal.js";
 import { createLogger } from "../../utils/logger.js";
 
-const logger = createLogger('Orders:')
+const logger = createLogger('Orders')
 
 export const getAllOrdersService = async () => {
 

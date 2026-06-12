@@ -1,7 +1,7 @@
 import { liveAPI, platformAPI, categoryAPI, releaseAPI, filterAPI, detailsAPI, giveawayAPI, latestAPI } from "../../models/externalAPI/externalAPI.model.js";
 import { createLogger } from "../../utils/logger.js";
 
-const logger = createLogger('ExternalAPI:')
+const logger = createLogger('ExternalAPI')
 
 export const getLiveGamesService = async () => {
     const games = await liveAPI.get();

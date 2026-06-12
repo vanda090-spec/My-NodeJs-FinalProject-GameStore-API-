@@ -1,7 +1,7 @@
 import { gameDal } from "../../dal/games/games.dal.js";
 import { createLogger } from "../../utils/logger.js";
 
-const logger = createLogger('Games:')
+const logger = createLogger('Games')
 
 export const getAllGamesService = async () => {
     const gameList = await gameDal.getAllGames();

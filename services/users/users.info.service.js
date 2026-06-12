@@ -3,7 +3,7 @@ import { userDal } from "../../dal/users/users.dal.js";
 
 
 
-const logger = createLogger("UsersInfoService:");
+const logger = createLogger("UsersInfoService");
 
 export const getUsersService = async () => {
 

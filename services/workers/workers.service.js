@@ -1,7 +1,7 @@
 import { workerDal } from "../../dal/workers/workers.dal.js";
 import { createLogger } from "../../utils/logger.js";
 
-const logger = createLogger('Workers:')
+const logger = createLogger('Workers')
 
 export const getAllWorkersService = async () => {
     const workers = await workerDal.getAllworkers();

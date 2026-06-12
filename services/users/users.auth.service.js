@@ -6,7 +6,7 @@ import { createLogger } from "../../utils/logger.js";
 import { userDal } from "../../dal/users/users.dal.js";
 
 
-const logger = createLogger("UsersAuthService:");
+const logger = createLogger("UsersAuthService");
 
 export const logUserService = async (userName, userPassword) => {
 
