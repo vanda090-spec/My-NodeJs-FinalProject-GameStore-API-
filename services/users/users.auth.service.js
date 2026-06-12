@@ -6,7 +6,7 @@ import { createLogger } from "../../utils/logger.js";
 import { userDal } from "../../dal/users/users.dal.js";
 
 
-const logger = createLogger("UsersAuthService:");
+const logger = createLogger("UsersAuthService");
 
 export const logUserService = async (userName, userPassword) => {
 
@@ -14,14 +14,14 @@ export const logUserService = async (userName, userPassword) => {
 
     if (!user) {
         const message = `User ${userName} not found`;
-            logger.error(message)
-        throw { status: 400, message};
+            logger.warn(message)
+        throw { status: 404, message};
     
     }
     const isValid = await comparePassword(userPassword, user.userPassword);
     if (!isValid) {
         const message = "Invalid user or password";
-        logger.warn(message);
+        logger.error(message);
         throw { status: 400,message:message};
         
     }
@@ -66,8 +66,8 @@ export const updateUserService = async (userID, updatedPassword) => {
 
     if (!user) {
         const message = `User ${userID} not found`;
-        logger.error(message);
-        throw { status: 400, message:message};
+        logger.warn(message);
+        throw { status: 404, message:message};
     }
 
     const { userPassword, ...cleanUser } = user;
@@ -89,8 +89,8 @@ export const userResetService = async (userID, newPassword) => {
 
     if(!user){
           const message = `User ${userID} not found`;
-        logger.error(message)
-        throw {status:400,message:message};
+        logger.warn(message)
+        throw {status:404,message:message};
     }
 
     const {userPassword,...cleanUser}=user;
