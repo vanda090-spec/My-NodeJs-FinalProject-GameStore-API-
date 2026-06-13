@@ -93,11 +93,11 @@ export const liveGiveawaysService = async () => {
 export const latestNewsService = async () => {
     const game = await latestAPI.get();
     if (!game) {
-        const msg = "No games found";
+        const msg = "No news article found";
         logger.warn(msg);
         throw { status: 404, message: msg };
     }
-    const msg = `Found ${game.data.length} games`;
+    const msg = `Found ${game.data.length} game news article`;
     logger.info(msg);
     return { status: 200, message: msg, games: game.data }
 }
