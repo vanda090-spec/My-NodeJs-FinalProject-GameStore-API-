@@ -92,6 +92,42 @@ The project uses Sequelize associations between entities:
 These relationships allow working with connected data using Sequelize ORM and foreign keys.
 
 ---
+## SQL Server Configuration
+
+Before running the project, make sure SQL Server Express is configured correctly.
+
+1. Open **SQL Server Configuration Manager**
+2. Go to:
+
+   SQL Server Services
+
+3. Make sure this service is running:
+
+   SQL Server (SQLEXPRESS)
+
+4. Go to:
+
+   SQL Server Network Configuration  
+   Protocols for SQLEXPRESS
+
+5. Enable:
+
+   TCP/IP
+
+6. Restart:
+
+   SQL Server (SQLEXPRESS)
+
+7. Open SSMS and connect to:
+
+   localhost\SQLEXPRESS
+
+8. Make sure the database exists:
+
+   ChenGameStore
+
+ If the server cannot connect to the database, check that SQLEXPRESS is running and TCP/IP is enabled.
+ ---
 
 ## Database Setup #1
 
@@ -116,10 +152,11 @@ The application uses SQL Server Authentication.
 Create a `.env` file and configure:
 
 ```env
-DB_SERVER=localhost\SQLEXPRESS
+DB_SERVER=localhost
+DB_INSTANCE=SQLEXPRESS
 DB_NAME=YourDatabaseName
 DB_USER=YourSqlUser
-DB_PASSWORD=YourPassword
+DB_PASS=YourPassword
 JWT_SECRET=YourSecretKey
 PORT=2001
 ```
